@@ -1,0 +1,202 @@
+Week 1
+  Datastructures Lab Task II/IV B.Tech
+Batch-1: 09-November-2021  @  9.30 to 12
+Batch-2: 11-November-2021 @ 8.40 to 11.10
+Task-1
+We have discussed linear search algorithms in the class. Implement the same algorithm using any of the languages like C/Python. Write all the possible test cases. Write down your observations. 
+Sample input
+Enter number of elements 8
+Enter 8 elements
+44,16,18,164,47,10,0,-68
+Enter element to search 10
+Sample output
+10 is present at location 5
+Program(C):
+#include<stdio.h>
+int main(){
+int a[100],i,found=0,n,key;
+printf("Enter number of elements:");
+scanf("%d",&n);
+printf("Enter %d elements:",n);
+for(i=0;i<=n-1;i++)
+scanf("%d",&a[i]);
+printf("Enter element to search:");
+scanf("%d",&key);
+for(i=0;i<=n-1;i++)
+if(a[i]==key){
+    printf("%d is present at location %d",key,i);
+    found=1;
+    break;
+}
+if(found==0)
+printf("Element is not found");
+return 0;
+}
+or
+Program(Python):
+n=int(input("enter the size of array:"))
+print("enter the elements:")
+a=list(map(int,input().split()))
+key=int(input("enter the element to be found:"))
+f=0
+for i in range(n):
+if a[i]==key:
+print( "{} is the location of {}".format(i,key))
+f=1
+break
+if f==0:
+print( "element not found")
+
+Output 1:
+Enter number of elements:5
+Enter 5 elements:1 2 -5 6 0
+Enter element to search:-5
+-5 is present at location 2
+Output 2:
+Enter number of elements:5
+Enter 5 elements: 1 2 3 4 5
+Enter element to search:6
+Element is not found
+Task-2
+Suppose you are implementing a Linear search algorithm using any of the languages like C/Python. In the given array if there is a possibility of multiple occurrences of some elements. In such a case how to identify the location of the element. Design and implement the solution for the same.
+Sample input
+Enter number of elements 6
+Enter 6 elements
+44,16,18,16,47,16
+Enter element to search 16
+Sample output
+16 is present at location 1
+16 is present at location 3
+16 is present at location 5
+Program(C):
+#include<stdio.h>
+int main(){
+int a[100],i,found=0,n,key;
+printf("Enter number of elements:");
+scanf("%d",&n);
+printf("Enter %d elements",n);
+for(i=0;i<=n-1;i++)
+scanf("%d",&a[i]);
+printf("Enter element to search:");
+scanf("%d",&key);
+for(i=0;i<=n-1;i++)
+if(a[i]==key){
+    printf("%d is present at location %d\n",key,i);
+    found=1;
+}
+if(found==0)
+printf("Element is not found");
+return 0;
+}
+Program(Python):
+n=int(input("enter the size of array:"))
+print("enter the elements:")
+a=list(map(int,input().split()))
+key=int(input("enter the element to be found:"))
+f=0
+for i in range(n):
+if a[i]==key:
+print( "{} is at location of {}".format(key,i))
+f=1
+if f==0:
+print( "element not found")
+Output 1:
+Enter number of elements:5
+Enter 5 elements 1 2 3 4 2 2
+Enter element to search:2
+2 is present at location 1
+2 is present at location 4
+Output 2:
+Enter number of elements:6
+Enter 6 elements 1 54 3 32 5 -5
+Enter element to search:4
+Element is not found
+
+
+
+Task-3
+Rithick gets a lottery ticket and checks each number in the list to see whether he has won the lottery or not. Since there are many numbers,he finds it tedious to check each ticket number manually. So he decides to write a code to check whether he has won the lottery or not. Help Rithick write a code to find his lottery ticket number from the given ticket numbers.
+Input Format:
+First line of the input consists of n, that corresponds to the total number of lottery tickets.
+Next n lines consist of Integers, that corresponds to the given lottery ticket numbers.
+Last line consists of an Integer 'l', which corresponds to Rithick's lottery ticket number.
+Output Format:
+Output consists of the string "Congratulations! You have won the lottery" or "Sorry your ticket number is not there. Better luck next time", according to the search result.
+Sample Input and Output:
+[All text in bold corresponds to input and the rest corresponds to output]
+Enter the total number of tickets:
+5
+Enter the ticket number 1:
+4521
+Enter the ticket number 2:
+3589
+Enter the ticket number 3:
+147852
+Enter the ticket number 4:
+2365
+Enter the ticket number 5:
+8965
+The ticket numbers are:
+4521 3589 147852 2365 8965
+Enter the ticket number to be searched:
+8965
+The ticket number 8965 is found at position 5
+Congratulations!You have won the lottery
+Program(C):
+#include<stdio.h>
+int main(){
+int a[100],i,found=0,n,I;
+printf("Enter the total number of tickets:");
+scanf("%d",&n);
+printf("Enter %d elements\n",n);
+for(i=0;i<=n-1;i++){
+printf("Enter the ticket number %d:",i+1);
+scanf("%d",&a[i]);
+}
+printf("Enter the ticket number to be searched:");
+scanf("%d",&I);
+for(i=0;i<=n-1;i++)
+if(a[i]==I){
+    printf("The ticket number %d is found at position %d",I,i);
+    printf("Congratulations! You have won the lottery");
+    found=1;
+    break;
+}
+if(found==0)
+printf("Sorry! You Lost");
+return 0;
+}
+Program(Python):
+n=int(input("enter the number of tickets:"))
+print("entre the tickets numbers:")
+a=list(map(int,input().split()))
+i=int(input("enter the ticket number to be found:"))
+f=0
+for j in range(n):
+if a[j]==i:
+print( "Congratulations! You have won the
+lottery")
+f=1
+if f==0:
+print( "Sorry your ticket number is not there. Better
+luck next time")
+Output 1:
+Enter the total number of tickets:5
+Enter 5 elements
+Enter the ticket number 1:1234
+Enter the ticket number 2:1376
+Enter the ticket number 3:2456
+Enter the ticket number 4:2967
+Enter the ticket number 5:5674
+Enter the ticket number to be searched:2967
+The ticket number 2967 is found at position 3
+Congratulations! You have won the lottery
+Output 2:
+Enter the total number of tickets:4
+Enter 4 elements
+Enter the ticket number 1:1234
+Enter the ticket number 2:4566
+Enter the ticket number 3:8976
+Enter the ticket number 4:3457
+Enter the ticket number to be searched:6757
+Sorry! You Lost
